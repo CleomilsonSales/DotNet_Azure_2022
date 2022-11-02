@@ -1,0 +1,12 @@
+D:\Estudos\DotNet_Azure_2022\Manager\scr\Manager.Domain\obj\Debug\net5.0\Manager.Domain.csproj.AssemblyReference.cache
+D:\Estudos\DotNet_Azure_2022\Manager\scr\Manager.Domain\obj\Debug\net5.0\Manager.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Estudos\DotNet_Azure_2022\Manager\scr\Manager.Domain\obj\Debug\net5.0\Manager.Domain.AssemblyInfoInputs.cache
+D:\Estudos\DotNet_Azure_2022\Manager\scr\Manager.Domain\obj\Debug\net5.0\Manager.Domain.AssemblyInfo.cs
+D:\Estudos\DotNet_Azure_2022\Manager\scr\Manager.Domain\obj\Debug\net5.0\Manager.Domain.csproj.CoreCompileInputs.cache
+D:\Estudos\DotNet_Azure_2022\Manager\scr\Manager.Domain\bin\Debug\net5.0\Manager.Domain.deps.json
+D:\Estudos\DotNet_Azure_2022\Manager\scr\Manager.Domain\bin\Debug\net5.0\Manager.Domain.dll
+D:\Estudos\DotNet_Azure_2022\Manager\scr\Manager.Domain\bin\Debug\net5.0\ref\Manager.Domain.dll
+D:\Estudos\DotNet_Azure_2022\Manager\scr\Manager.Domain\bin\Debug\net5.0\Manager.Domain.pdb
+D:\Estudos\DotNet_Azure_2022\Manager\scr\Manager.Domain\obj\Debug\net5.0\Manager.Domain.dll
+D:\Estudos\DotNet_Azure_2022\Manager\scr\Manager.Domain\obj\Debug\net5.0\ref\Manager.Domain.dll
+D:\Estudos\DotNet_Azure_2022\Manager\scr\Manager.Domain\obj\Debug\net5.0\Manager.Domain.pdb

@@ -12,11 +12,12 @@ Ambiente
 --criando projeto API
     dotnet new webAPI -o Manager.API
 
---crinado o dominio
+--crinado class
     dotnet new classlib -o Manager.Domain
 
---criando Services
-    dotnet new classlib -o Manager.Services
+--incluindo no projeto o Pocote do Fluent Validation
+    --tem que executar comando na camada que ele irá atuar
+    dotnet add package fluentvalidation
 
---criando Infraestrutura
-    dotnet new classlib -o Manager.Infra
+--vendo se tem erro na camada da API
+    dotnet build

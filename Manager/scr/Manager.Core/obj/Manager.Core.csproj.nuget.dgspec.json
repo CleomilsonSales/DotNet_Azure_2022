@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\Manager.Domain\\Manager.Domain.csproj": {}
+    "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\Manager.Core\\Manager.Core.csproj": {}
   },
   "projects": {
-    "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\Manager.Domain\\Manager.Domain.csproj": {
+    "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\Manager.Core\\Manager.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\Manager.Domain\\Manager.Domain.csproj",
-        "projectName": "Manager.Domain",
-        "projectPath": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\Manager.Domain\\Manager.Domain.csproj",
+        "projectUniqueName": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\Manager.Core\\Manager.Core.csproj",
+        "projectName": "Manager.Core",
+        "projectPath": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\Manager.Core\\Manager.Core.csproj",
         "packagesPath": "C:\\Users\\CleomilsonSales\\.nuget\\packages\\",
-        "outputPath": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\Manager.Domain\\obj\\",
+        "outputPath": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\Manager.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -40,12 +40,6 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "dependencies": {
-            "fluentvalidation": {
-              "target": "Package",
-              "version": "[11.2.2, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
