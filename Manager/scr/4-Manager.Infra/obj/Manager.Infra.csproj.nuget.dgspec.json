@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\Manager.Infra\\Manager.Infra.csproj": {}
+    "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\4-Manager.Infra\\Manager.Infra.csproj": {}
   },
   "projects": {
-    "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\Manager.Infra\\Manager.Infra.csproj": {
+    "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\4-Manager.Infra\\Manager.Infra.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\Manager.Infra\\Manager.Infra.csproj",
+        "projectUniqueName": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\4-Manager.Infra\\Manager.Infra.csproj",
         "projectName": "Manager.Infra",
-        "projectPath": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\Manager.Infra\\Manager.Infra.csproj",
+        "projectPath": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\4-Manager.Infra\\Manager.Infra.csproj",
         "packagesPath": "C:\\Users\\CleomilsonSales\\.nuget\\packages\\",
-        "outputPath": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\Manager.Infra\\obj\\",
+        "outputPath": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\4-Manager.Infra\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -40,6 +40,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

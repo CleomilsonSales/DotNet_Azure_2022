@@ -21,3 +21,8 @@ Ambiente
 
 --vendo se tem erro na camada da API
     dotnet build
+
+--instalando o EntityFrameworkCore para version
+    //tem que fazer dentro da pasta que irá atuar o contexto, nesse caso na Infra.
+    //com o dotnet 5 e aconselhado usar a versão 5.0.1
+    dotnet add package Microsoft.EntityFrameworkCore -v 5.0.1
