@@ -19,6 +19,9 @@ Ambiente
     --tem que executar comando na camada que ele irá atuar
     dotnet add package fluentvalidation
 
+--limpar o projeto para quando der erro, isso atualizar as dll de cache
+    dotnet clean
+
 --vendo se tem erro na camada da API
     dotnet build
 
@@ -26,3 +29,40 @@ Ambiente
     //tem que fazer dentro da pasta que irá atuar o contexto, nesse caso na Infra.
     //com o dotnet 5 e aconselhado usar a versão 5.0.1
     dotnet add package Microsoft.EntityFrameworkCore -v 5.0.1
+
+--adicionando as pastas na solução
+    --entra na pasta que sera adicionada para executar o comando
+    dotnet sln ..\..\Manager.sln add .\Manager.Domain.csproj
+
+--pacotes para ligação entre banco e classes - Mapping
+    --entra na pasta que sera adicionada para executar o comando nesse caso Infra
+    --SQl Server
+    dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+    --MySQL -- versão certa para o .Net 5.0
+    dotnet add package Pomelo.EntityFrameworkCore.MySql -v 5.0.0-alpha.2
+    --Oracle
+    dotnet add package Oracle.EntityFrameworkCore -Version 3.19.80
+    --mais casos vai no portal da nuget na parte de packages e procura a package do banco usado
+
+    --depois instalar o Design -compativel
+    dotnet add package Microsoft.EntityFrameworkCore.Design -v 5.0.1
+
+    --depois o Tools para usar na migrations - compativel
+    dotnet add package Microsoft.EntityFrameworkCore.Tools -v 5.0.1
+
+    --pacote global do EF Core
+        dotnet tool install --global dotnet-ef --version 5.0.1
+
+--adicionar um projeto ao outro - referenciando
+    --entra na pasta que sera adicionada para executar o comando
+    dotnet add .\Manager.Infra.csproj reference '..\2-Manager.Domain\Manager.Domain.csproj'
+
+--como fazer downgrade
+    vai no arquivo Manager.Infra.csproj e muda o TargetFramework: exemplo: netcoreapp3.0
+
+--para pegar string de conexao para dotnet
+    https://www.connectionstrings.com/
+
+--iniciando as migrations --na pasta INFRA
+    dotnet ef migrations add InitialMigration
+

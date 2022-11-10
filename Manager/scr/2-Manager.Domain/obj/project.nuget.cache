@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "L7Ud1rYpLWQ4Pia1T1ijKurQQMpfIrN0GrQCnsI0iU7whCI1mBiNPRg7x9hJsTIrKerSerZQ5pZ4pehaUyFYIw==",
+  "dgSpecHash": "HZre5UtxGUFnDxv7lBRsOzPMFzP/XZ6CpB+h6J6kRjS6E2AGLDrLjcj874tI9aWCMKysKwh/ZFua64Cmm6C+vw==",
   "success": true,
-  "projectFilePath": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\Manager.Domain\\Manager.Domain.csproj",
+  "projectFilePath": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\2-Manager.Domain\\Manager.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\CleomilsonSales\\.nuget\\packages\\fluentvalidation\\11.2.2\\fluentvalidation.11.2.2.nupkg.sha512"
   ],

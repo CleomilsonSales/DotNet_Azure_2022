@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Manager.Domain.Entities;
 using Manager.Infra.Interfaces;
 using Manager.Infra.Context;
+using System.Collections.Generic;
 
 namespace Manager.Infra.Repositories{
     public class BaseRepository<T> : IBaseRepository<T> where T : Base{
@@ -28,7 +29,7 @@ namespace Manager.Infra.Repositories{
             return obj;
         } 
 
-        public virtual async Task Remove(Long id){
+        public virtual async Task Remove(long id){
             var obj = await Get(id);
 
             if (obj != null) {
@@ -37,7 +38,7 @@ namespace Manager.Infra.Repositories{
             }
         } 
 
-        public virtual async Task<T> Get(Long id){
+        public virtual async Task<T> Get(long id){
             var obj = await _context.Set<T>()
                                     .AsNoTracking()
                                     .Where(x=>x.Id == id)
@@ -50,6 +51,6 @@ namespace Manager.Infra.Repositories{
             return await _context.Set<T>()
                                 .AsNoTracking()
                                 .ToListAsync();
-1       } 
+       } 
     }
 }
