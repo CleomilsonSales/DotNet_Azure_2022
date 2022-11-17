@@ -13,9 +13,6 @@
         "packagesPath": "C:\\Users\\CleomilsonSales\\.nuget\\packages\\",
         "outputPath": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\2-Manager.Domain\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\CleomilsonSales\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
@@ -28,7 +25,11 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\5-Manager.Core\\Manager.Core.csproj": {
+                "projectPath": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\5-Manager.Core\\Manager.Core.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -74,9 +75,6 @@
         "packagesPath": "C:\\Users\\CleomilsonSales\\.nuget\\packages\\",
         "outputPath": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\4-Manager.Infra\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\CleomilsonSales\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
@@ -116,17 +114,77 @@
               "target": "Package",
               "version": "[5.0.1, )"
             },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.1, )"
             },
-            "Pomelo.EntityFrameworkCore.MySql": {
+            "Microsoft.EntityFrameworkCore.Tools.DotNet": {
               "target": "Package",
-              "version": "[5.0.0-alpha.2, )"
+              "version": "[2.0.3, )"
             }
           },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\5-Manager.Core\\Manager.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\5-Manager.Core\\Manager.Core.csproj",
+        "projectName": "Manager.Core",
+        "projectPath": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\5-Manager.Core\\Manager.Core.csproj",
+        "packagesPath": "C:\\Users\\CleomilsonSales\\.nuget\\packages\\",
+        "outputPath": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\5-Manager.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\CleomilsonSales\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
           "imports": [
             "net461",
             "net462",

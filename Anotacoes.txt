@@ -1,5 +1,6 @@
 Ambiente
     Microsoft SQL Server 18; link: https://learn.microsoft.com/pt-br/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15
+        não esquecer de baixar o SQL Server junto do management
     .net sdk 5.0.408; link: https://dotnet.microsoft.com/en-us/download/dotnet/5.0
 
 --checando versão .net
@@ -37,7 +38,7 @@ Ambiente
 --pacotes para ligação entre banco e classes - Mapping
     --entra na pasta que sera adicionada para executar o comando nesse caso Infra
     --SQl Server
-    dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+    dotnet add package Microsoft.EntityFrameworkCore.SqlServer -v 5.0.1
     --MySQL -- versão certa para o .Net 5.0
     dotnet add package Pomelo.EntityFrameworkCore.MySql -v 5.0.0-alpha.2
     --Oracle
@@ -50,8 +51,6 @@ Ambiente
     --depois o Tools para usar na migrations - compativel
     dotnet add package Microsoft.EntityFrameworkCore.Tools -v 5.0.1
 
-    --pacote global do EF Core
-        dotnet tool install --global dotnet-ef --version 5.0.1
 
 --adicionar um projeto ao outro - referenciando
     --entra na pasta que sera adicionada para executar o comando
@@ -66,3 +65,15 @@ Ambiente
 --iniciando as migrations --na pasta INFRA
     dotnet ef migrations add InitialMigration
 
+
+--migrations
+    --pacote global do EF Core para fazer as migrations
+        dotnet tool install --global dotnet-ef --version 5.0.1
+    --fazendo as migrations inicial (InitialMigration é boas praticas, pode ser qualquer nome, sempre que fizer mudar o nome)
+        dotnet ef migrations add InitialMigration
+    --refletindo no banco de dados as migrations
+        dotnet ef database update
+
+
+--adicionando o automapper
+    dotnet add package automapper

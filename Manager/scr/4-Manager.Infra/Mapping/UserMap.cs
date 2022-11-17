@@ -7,17 +7,18 @@ namespace Manager.Infra.Mappings{
     public class UserMap : IEntityTypeConfiguration<User>{
         public void Configure(EntityTypeBuilder<User> builder){
             builder.ToTable("User");
-            builder.Haskey(x => x.Id);
+
+            //builder.Haskey(x => x.Id); //não funcionou no dotnet 5.0, mas primarykey foi criada com sucesso
+
             builder.Property(x => x.Id)
-                    //.UseIdentityColumn  //auto incremento do SqlServer
-                    .UseAutoIncrementColumn()
+                    .UseIdentityColumn()//auto incremento do SqlServer
                     .HasColumnType("BIGINT");
 
             builder.Property(x => x.Name)
                     .IsRequired()
-                    .HasMaxLength(80)
+                    .HasMaxLength(180)
                     .HasColumnName("name")
-                    .HasColumnType("VARCHAR(80)");
+                    .HasColumnType("VARCHAR(180)");
 
             builder.Property(x => x.Password)
                     .IsRequired()

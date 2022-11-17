@@ -10,6 +10,16 @@
         "runtime": {
           "lib/net5.0/FluentValidation.dll": {}
         }
+      },
+      "Manager.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Manager.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Manager.Core.dll": {}
+        }
       }
     }
   },
@@ -34,16 +44,21 @@
         "lib/netstandard2.1/FluentValidation.dll",
         "lib/netstandard2.1/FluentValidation.xml"
       ]
+    },
+    "Manager.Core/1.0.0": {
+      "type": "project",
+      "path": "../5-Manager.Core/Manager.Core.csproj",
+      "msbuildProject": "../5-Manager.Core/Manager.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "Manager.Core >= 1.0.0",
       "fluentvalidation >= 11.2.2"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\CleomilsonSales\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\CleomilsonSales\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -54,9 +69,6 @@
       "packagesPath": "C:\\Users\\CleomilsonSales\\.nuget\\packages\\",
       "outputPath": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\2-Manager.Domain\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
         "C:\\Users\\CleomilsonSales\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
@@ -69,7 +81,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\5-Manager.Core\\Manager.Core.csproj": {
+              "projectPath": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\5-Manager.Core\\Manager.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

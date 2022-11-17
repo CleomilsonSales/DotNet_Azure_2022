@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2MHsBCElSc9MvOPjKTW5h383LU2K/BbwjOmyxnfaL/mibVhOEJ0NieUV4MLRGxtIwk6v7OpyhHHkkMPqodvu9w==",
+  "dgSpecHash": "HZuWZXACeLv9/CXs5qcjTMJytrWbdO5Ey5Pm+NC+zIU/x2nBYJtnhNcUyg1B7x3zC3g2rpvIj+E+Htp13RU1lw==",
   "success": true,
-  "projectFilePath": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\Manager.Core\\Manager.Core.csproj",
+  "projectFilePath": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\5-Manager.Core\\Manager.Core.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

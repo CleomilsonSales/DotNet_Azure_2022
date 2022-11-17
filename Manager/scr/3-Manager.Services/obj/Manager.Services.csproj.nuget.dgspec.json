@@ -1,21 +1,234 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\Manager.Services\\Manager.Services.csproj": {}
+    "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\3-Manager.Services\\Manager.Services.csproj": {}
   },
   "projects": {
-    "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\Manager.Services\\Manager.Services.csproj": {
+    "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\2-Manager.Domain\\Manager.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\Manager.Services\\Manager.Services.csproj",
-        "projectName": "Manager.Services",
-        "projectPath": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\Manager.Services\\Manager.Services.csproj",
+        "projectUniqueName": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\2-Manager.Domain\\Manager.Domain.csproj",
+        "projectName": "Manager.Domain",
+        "projectPath": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\2-Manager.Domain\\Manager.Domain.csproj",
         "packagesPath": "C:\\Users\\CleomilsonSales\\.nuget\\packages\\",
-        "outputPath": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\Manager.Services\\obj\\",
+        "outputPath": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\2-Manager.Domain\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "configFilePaths": [
+          "C:\\Users\\CleomilsonSales\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\5-Manager.Core\\Manager.Core.csproj": {
+                "projectPath": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\5-Manager.Core\\Manager.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "fluentvalidation": {
+              "target": "Package",
+              "version": "[11.2.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\3-Manager.Services\\Manager.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\3-Manager.Services\\Manager.Services.csproj",
+        "projectName": "Manager.Services",
+        "projectPath": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\3-Manager.Services\\Manager.Services.csproj",
+        "packagesPath": "C:\\Users\\CleomilsonSales\\.nuget\\packages\\",
+        "outputPath": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\3-Manager.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\CleomilsonSales\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\2-Manager.Domain\\Manager.Domain.csproj": {
+                "projectPath": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\2-Manager.Domain\\Manager.Domain.csproj"
+              },
+              "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\4-Manager.Infra\\Manager.Infra.csproj": {
+                "projectPath": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\4-Manager.Infra\\Manager.Infra.csproj"
+              },
+              "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\5-Manager.Core\\Manager.Core.csproj": {
+                "projectPath": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\5-Manager.Core\\Manager.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "automapper": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\4-Manager.Infra\\Manager.Infra.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\4-Manager.Infra\\Manager.Infra.csproj",
+        "projectName": "Manager.Infra",
+        "projectPath": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\4-Manager.Infra\\Manager.Infra.csproj",
+        "packagesPath": "C:\\Users\\CleomilsonSales\\.nuget\\packages\\",
+        "outputPath": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\4-Manager.Infra\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\CleomilsonSales\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\2-Manager.Domain\\Manager.Domain.csproj": {
+                "projectPath": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\2-Manager.Domain\\Manager.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools.DotNet": {
+              "target": "Package",
+              "version": "[2.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\5-Manager.Core\\Manager.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\5-Manager.Core\\Manager.Core.csproj",
+        "projectName": "Manager.Core",
+        "projectPath": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\5-Manager.Core\\Manager.Core.csproj",
+        "packagesPath": "C:\\Users\\CleomilsonSales\\.nuget\\packages\\",
+        "outputPath": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\5-Manager.Core\\obj\\",
+        "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\CleomilsonSales\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],

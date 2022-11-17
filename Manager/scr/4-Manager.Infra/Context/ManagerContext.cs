@@ -10,7 +10,8 @@ namespace Manager.Infra.Context{
 
         //para migrations
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder){
-            optionsBuilder.UseMySql("Server=localhost;Port=3306;Database=usermanagerapi;Uid=root;Pwd=root");
+            optionsBuilder.UseSqlServer(@"Server=CLEOMILSON_NB\SQLEXPRESS01;Database=usermanagerapi;Trusted_Connection=True;");
+            //Server=CLEOMILSON_NB\SQLEXPRESS01;Database=usermanagerapi;User Id=Cleomilson_NB\CleomilsonSales;Password=cleo2705;  --conexão do curso não deu certo na minha configuração do sqlserver
         }
 
         public virtual DbSet<User> Users {get; set; }

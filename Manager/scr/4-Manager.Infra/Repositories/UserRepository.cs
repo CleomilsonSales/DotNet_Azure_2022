@@ -1,8 +1,10 @@
+using System.Linq; //para usar o where
 using System.Threading.Tasks;
 using Manager.Domain.Entities;
 using Manager.Infra.Interfaces;
 using Manager.Infra.Context;
 using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 
 namespace Manager.Infra.Repositories{
     public class UserRepository : BaseRepository<User>, IUserRepository{

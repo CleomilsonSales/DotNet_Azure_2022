@@ -13,9 +13,68 @@
         "packagesPath": "C:\\Users\\CleomilsonSales\\.nuget\\packages\\",
         "outputPath": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\2-Manager.Domain\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "configFilePaths": [
+          "C:\\Users\\CleomilsonSales\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\5-Manager.Core\\Manager.Core.csproj": {
+                "projectPath": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\5-Manager.Core\\Manager.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "fluentvalidation": {
+              "target": "Package",
+              "version": "[11.2.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\5-Manager.Core\\Manager.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\5-Manager.Core\\Manager.Core.csproj",
+        "projectName": "Manager.Core",
+        "projectPath": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\5-Manager.Core\\Manager.Core.csproj",
+        "packagesPath": "C:\\Users\\CleomilsonSales\\.nuget\\packages\\",
+        "outputPath": "D:\\Estudos\\DotNet_Azure_2022\\Manager\\scr\\5-Manager.Core\\obj\\",
+        "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\CleomilsonSales\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
@@ -40,12 +99,6 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "dependencies": {
-            "fluentvalidation": {
-              "target": "Package",
-              "version": "[11.2.2, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",

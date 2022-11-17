@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Manager.Domain.Validators;
+using Manager.Core.Expeceptions;
 
 namespace Manager.Domain.Entities{
     public class User: Base{
@@ -15,6 +16,8 @@ namespace Manager.Domain.Entities{
             Password = password;
             //instanciando lista de erro vazio
             _errors = new List<string>();
+
+            Validate();
         }
 
         //EF - Para uso do Entity Framework
@@ -45,7 +48,7 @@ namespace Manager.Domain.Entities{
                     _errors.Add(error.ErrorMessage);
 
                     //Retornando apenas o primeiro erro
-                    throw new Exception("Erro interno na camada de Dominio: " + _errors[0]);
+                    throw new DomainException("Erro interno na camada de Dominio: ", _errors);
                 }
             }
             
