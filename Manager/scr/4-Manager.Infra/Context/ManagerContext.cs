@@ -9,10 +9,12 @@ namespace Manager.Infra.Context{
         public ManagerContext(DbContextOptions<ManagerContext> options) : base(options){}
 
         //para migrations
+        /* esse trecho foi incluido no appsettings.json
+        
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder){
             optionsBuilder.UseSqlServer(@"Server=CLEOMILSON_NB\SQLEXPRESS01;Database=usermanagerapi;Trusted_Connection=True;");
             //Server=CLEOMILSON_NB\SQLEXPRESS01;Database=usermanagerapi;User Id=Cleomilson_NB\CleomilsonSales;Password=cleo2705;  --conexão do curso não deu certo na minha configuração do sqlserver
-        }
+        }*/
 
         public virtual DbSet<User> Users {get; set; }
 

@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = Manager.API
-build_property.ProjectDir = D:\Estudos\DotNet_Azure_2022\Manager\scr\Manager.API\
+build_property.ProjectDir = D:\Estudos\DotNet_Azure_2022\Manager\scr\1-Manager.API\

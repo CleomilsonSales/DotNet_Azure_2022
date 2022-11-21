@@ -26,6 +26,10 @@ Ambiente
 --vendo se tem erro na camada da API
     dotnet build
 
+--rodar API 
+    dotnet run
+    --caminho: https://localhost:5001/swagger/index.html
+
 --instalando o EntityFrameworkCore para version
     //tem que fazer dentro da pasta que irá atuar o contexto, nesse caso na Infra.
     //com o dotnet 5 e aconselhado usar a versão 5.0.1
