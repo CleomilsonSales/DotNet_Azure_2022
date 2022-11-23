@@ -36,7 +36,7 @@ namespace Manager.Services.Services{
         public async Task<UserDTO> Update(UserDTO userDTO){
             var userExists = await _userRepository.Get(userDTO.Id);
 
-            if (userExists != null)
+            if (userExists == null)
                 throw new DomainException("Usuario não encontrado");
 
             var user = _mapper.Map<User>(userDTO);

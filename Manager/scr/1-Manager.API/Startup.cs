@@ -45,8 +45,10 @@ namespace Manager.API
             var autoMapperConfig = new MapperConfiguration(cfg =>{
                 cfg.CreateMap<User, UserDTO>().ReverseMap();
                 cfg.CreateMap<CreateUserViewModel, UserDTO>().ReverseMap();
+                cfg.CreateMap<UpdateUserViewModel, UserDTO>().ReverseMap();
             });
 
+            services.AddSingleton(autoMapperConfig.CreateMapper());
             
             services.AddSingleton(d => Configuration);
             services.AddDbContext<ManagerContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:USER_MANAGER"]), ServiceLifetime.Transient);
