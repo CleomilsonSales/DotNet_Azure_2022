@@ -21,6 +21,10 @@ using Manager.Services.DTO;
 using Manager.Domain.Entities;
 using Manager.Infra.Context;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text; //para o encoding
+using Manager.API.Token;
 
 namespace Manager.API
 {
@@ -39,6 +43,29 @@ namespace Manager.API
 
             services.AddControllers();
 
+            
+            #region Jwt
+
+            var secretKey = Configuration["Jwt:Key"];
+
+            services.AddAuthentication(x => {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(x => {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters{
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(secretKey)),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+            });
+
+            #endregion
+            
+            
             #region DI_AutoMapper
             //#region é so pra organização, onde vc pode minizar o trecho do codigo
 
@@ -57,13 +84,47 @@ namespace Manager.API
             //AddSingleton - uma instancia por todo o ciclo da aplicação
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<ITokenGenerator, TokenGenerator>();
 
             #endregion
 
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Manager.API", Version = "v1" });
+            #region Swagger
+
+            services.AddSwaggerGen(c => {
+                c.SwaggerDoc("v1", new OpenApiInfo{
+                    Title = "Manager API",
+                    Version = "v1",
+                    Description = "API constuindo no curso de API Rest com .Net 5, Azure 2022 e SQL Server 2019",
+                    Contact = new OpenApiContact{
+                        Name = "Cleomilson Sales",
+                        Email = "cleomilsonsales@hotmail.com",
+                        Url = new Uri("https://github.com/cleomilsonsales")
+                    },
+                });
+
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme{
+                    In = ParameterLocation.Header,
+                    Description = "Utilize o Bearer <Token>",
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey
+                });
+
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement {{
+                    new OpenApiSecurityScheme{
+                        Reference = new OpenApiReference{
+                            Type = ReferenceType.SecurityScheme,
+                            Id = "Bearer"
+                        }
+                    },
+                    new string[] { }
+                }
+                });
             });
+
+            #endregion
+        
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -79,6 +140,8 @@ namespace Manager.API
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

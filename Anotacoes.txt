@@ -81,3 +81,16 @@ Ambiente
 
 --adicionando o automapper
     dotnet add package automapper
+
+
+--jwt
+    --pacotes do jwt (dentro da pasta que sera usado)
+    dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer --version 5.0.2
+
+    dotnet add package Microsoft.AspNetCore.Authentication.OpenIdConnect --version 5.0.2
+
+    --validando token
+    https://jwt.io/
+
+    --usando a authorize da API com o novo swagger
+    na chave tem que colocar "Bearer" depois da chave criado no /api/v1/auth/login
