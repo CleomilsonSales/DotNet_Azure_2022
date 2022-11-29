@@ -111,3 +111,14 @@ Ambiente
     dotnet add package EscNet --version 1.0.1
     adicionando no user-secrets
     dotnet user-secrets set "Cryptography:Key" "x5qWaAZU3jqSY6wV" --project .\Manager.API.csproj //a key deve ser divisivel por 8 e normal
+
+
+--teste unitarios - XUnit
+    --criandos os teste
+    dotnet new xunit
+    --adicionando o mock no projeto
+    dotnet add package moq
+    --instalando o bogus para criar dados falsos
+    dotnet add package bogus
+    --biblioteca fluentassertions, para fazer melhor os testes 
+    dotnet add package fluentassertions
