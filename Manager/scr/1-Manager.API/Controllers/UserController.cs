@@ -36,8 +36,12 @@ namespace Manager.API.Controllers{
                 return Ok(new ResultViewModel{
                     Message = "Usuario criado com sucesso",
                     Success = true,
-                    Data = userCreated
-
+                    //Data = userUpdated
+                    Data = new {
+                        Id = userCreated.Id,
+                        Name = userCreated.Name,
+                        Email = userCreated.Email,
+                    } // pode fazer assim ou criar a anotation JsonIgnore no DTO que irá ocultar o campo que vc escolher
                 });
             }
             catch (DomainException ex){
@@ -62,7 +66,6 @@ namespace Manager.API.Controllers{
                     Message = "Usuario atualizado com sucesso",
                     Success = true,
                     Data = userUpdated
-
                 });
             }
             catch (DomainException ex){

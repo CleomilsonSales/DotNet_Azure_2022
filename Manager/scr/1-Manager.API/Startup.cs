@@ -25,6 +25,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text; //para o encoding
 using Manager.API.Token;
+using EscNet.DependencyInjection.IoC.Cryptography;
 
 namespace Manager.API
 {
@@ -122,7 +123,12 @@ namespace Manager.API
             });
 
             #endregion
-        
+
+            #region Criptography
+
+            services.AddRijndaelCryptography(Configuration["Cryptography:Key"]);    
+
+            #endregion    
 
 
         }

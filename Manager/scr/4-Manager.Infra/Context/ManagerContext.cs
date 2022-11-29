@@ -9,7 +9,7 @@ namespace Manager.Infra.Context{
         public ManagerContext(DbContextOptions<ManagerContext> options) : base(options){}
 
         //para migrations
-        /* esse trecho foi incluido no appsettings.json
+        /* esse trecho foi incluido no appsettings.json depois para o user-secrets
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder){
             optionsBuilder.UseSqlServer(@"Server=CLEOMILSON_NB\SQLEXPRESS01;Database=usermanagerapi;Trusted_Connection=True;");
