@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using Manager.API.ViewModels;
 using System.Threading.Tasks;
-using Manager.Core.Expeceptions;
+using Manager.Core.Exceptions;
 using Manager.Services.Interfaces;
 using AutoMapper;
 using Manager.Services.DTO;

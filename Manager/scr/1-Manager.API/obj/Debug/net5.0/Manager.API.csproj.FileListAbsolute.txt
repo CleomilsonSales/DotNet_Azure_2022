@@ -27,6 +27,13 @@ D:\Estudos\DotNet_Azure_2022\Manager\scr\Manager.API\obj\Debug\net5.0\Manager.AP
 D:\Estudos\DotNet_Azure_2022\Manager\scr\Manager.API\obj\Debug\net5.0\ref\Manager.API.dll
 D:\Estudos\DotNet_Azure_2022\Manager\scr\Manager.API\obj\Debug\net5.0\Manager.API.pdb
 D:\Estudos\DotNet_Azure_2022\Manager\scr\Manager.API\obj\Debug\net5.0\Manager.API.genruntimeconfig.cache
+D:\Estudos\DotNet_Azure_2022\Manager\scr\1-Manager.API\obj\Debug\net5.0\Manager.API.csproj.AssemblyReference.cache
+D:\Estudos\DotNet_Azure_2022\Manager\scr\1-Manager.API\obj\Debug\net5.0\Manager.API.GeneratedMSBuildEditorConfig.editorconfig
+D:\Estudos\DotNet_Azure_2022\Manager\scr\1-Manager.API\obj\Debug\net5.0\Manager.API.AssemblyInfoInputs.cache
+D:\Estudos\DotNet_Azure_2022\Manager\scr\1-Manager.API\obj\Debug\net5.0\Manager.API.AssemblyInfo.cs
+D:\Estudos\DotNet_Azure_2022\Manager\scr\1-Manager.API\obj\Debug\net5.0\Manager.API.csproj.CoreCompileInputs.cache
+D:\Estudos\DotNet_Azure_2022\Manager\scr\1-Manager.API\obj\Debug\net5.0\Manager.API.MvcApplicationPartsAssemblyInfo.cs
+D:\Estudos\DotNet_Azure_2022\Manager\scr\1-Manager.API\obj\Debug\net5.0\Manager.API.MvcApplicationPartsAssemblyInfo.cache
 D:\Estudos\DotNet_Azure_2022\Manager\scr\1-Manager.API\bin\Debug\net5.0\appsettings.Development.json
 D:\Estudos\DotNet_Azure_2022\Manager\scr\1-Manager.API\bin\Debug\net5.0\appsettings.json
 D:\Estudos\DotNet_Azure_2022\Manager\scr\1-Manager.API\bin\Debug\net5.0\Manager.API.exe
@@ -83,13 +90,6 @@ D:\Estudos\DotNet_Azure_2022\Manager\scr\1-Manager.API\bin\Debug\net5.0\Manager.
 D:\Estudos\DotNet_Azure_2022\Manager\scr\1-Manager.API\bin\Debug\net5.0\Manager.Services.pdb
 D:\Estudos\DotNet_Azure_2022\Manager\scr\1-Manager.API\bin\Debug\net5.0\Manager.Infra.pdb
 D:\Estudos\DotNet_Azure_2022\Manager\scr\1-Manager.API\bin\Debug\net5.0\Manager.Core.pdb
-D:\Estudos\DotNet_Azure_2022\Manager\scr\1-Manager.API\obj\Debug\net5.0\Manager.API.csproj.AssemblyReference.cache
-D:\Estudos\DotNet_Azure_2022\Manager\scr\1-Manager.API\obj\Debug\net5.0\Manager.API.GeneratedMSBuildEditorConfig.editorconfig
-D:\Estudos\DotNet_Azure_2022\Manager\scr\1-Manager.API\obj\Debug\net5.0\Manager.API.AssemblyInfoInputs.cache
-D:\Estudos\DotNet_Azure_2022\Manager\scr\1-Manager.API\obj\Debug\net5.0\Manager.API.AssemblyInfo.cs
-D:\Estudos\DotNet_Azure_2022\Manager\scr\1-Manager.API\obj\Debug\net5.0\Manager.API.csproj.CoreCompileInputs.cache
-D:\Estudos\DotNet_Azure_2022\Manager\scr\1-Manager.API\obj\Debug\net5.0\Manager.API.MvcApplicationPartsAssemblyInfo.cs
-D:\Estudos\DotNet_Azure_2022\Manager\scr\1-Manager.API\obj\Debug\net5.0\Manager.API.MvcApplicationPartsAssemblyInfo.cache
 D:\Estudos\DotNet_Azure_2022\Manager\scr\1-Manager.API\obj\Debug\net5.0\staticwebassets\Manager.API.StaticWebAssets.Manifest.cache
 D:\Estudos\DotNet_Azure_2022\Manager\scr\1-Manager.API\obj\Debug\net5.0\staticwebassets\Manager.API.StaticWebAssets.xml
 D:\Estudos\DotNet_Azure_2022\Manager\scr\1-Manager.API\obj\Debug\net5.0\scopedcss\bundle\Manager.API.styles.css

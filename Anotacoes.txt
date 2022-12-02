@@ -125,3 +125,17 @@ Ambiente
 
     --caso não pareça o RunTest por causa do intellisense 
         dotnet test
+
+--Configurando Azure
+    https://portal.azure.com/#home
+
+    servidor: cleomilson-mymanagerapi
+    link server: cleomilson-mymanagerapi.database.windows.net
+    user: cleomilsonsales
+    senha: no app do celular
+
+    --para migrar o database para o azure server
+    dotnet ef database update
+
+    link importante de como usar o azure free
+    https://learn.microsoft.com/pt-br/azure/app-service/app-service-web-tutorial-dotnet-sqldatabase

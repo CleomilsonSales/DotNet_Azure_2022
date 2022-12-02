@@ -18,6 +18,11 @@ namespace Manager.Infra.Context{
 
         public virtual DbSet<User> Users {get; set; }
 
+        /*//para enviar as migrations para o azure server
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder){
+            optionsBuilder.UseSqlServer(@"Serve=tcp:cleomilson-mymanagerapi.database.windows.net,1433;Database=cleomilson-mymanagerapi;User ID=cleomilsonsales;Password=senha no aplicativo;Trusted_Connection=False;Encrypt=True;");
+        }*/
+
         protected override void OnModelCreating(ModelBuilder builder){
             builder.ApplyConfiguration(new UserMap());
         }
