@@ -16,5 +16,7 @@ namespace Manager.Infra.Interfaces{
 
         Task<List<T>> Get();
 
+        Task<List<T>> Search();
+
     }
 }

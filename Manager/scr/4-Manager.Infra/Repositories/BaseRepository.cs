@@ -52,5 +52,11 @@ namespace Manager.Infra.Repositories{
                                 .AsNoTracking()
                                 .ToListAsync();
        } 
+
+       public virtual async Task<List<T>> Search(){
+            return await _context.Set<T>()
+                                .AsNoTracking()
+                                .ToListAsync();
+       }                        
     }
 }

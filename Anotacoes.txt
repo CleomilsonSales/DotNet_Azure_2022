@@ -122,3 +122,6 @@ Ambiente
     dotnet add package bogus
     --biblioteca fluentassertions, para fazer melhor os testes 
     dotnet add package fluentassertions
+
+    --caso não pareça o RunTest por causa do intellisense 
+        dotnet test

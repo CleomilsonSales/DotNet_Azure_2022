@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Manager.Core.Expeceptions{
+namespace Manager.Core.Exceptions{
     public class DomainException : Exception{
         internal List<string> _errors;
 
