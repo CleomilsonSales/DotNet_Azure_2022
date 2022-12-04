@@ -111,6 +111,9 @@ Ambiente
     dotnet add package EscNet --version 1.0.1
     adicionando no user-secrets
     dotnet user-secrets set "Cryptography:Key" "x5qWaAZU3jqSY6wV" --project .\Manager.API.csproj //a key deve ser divisivel por 8 e normal
+    --vendo os secredos
+    dotnet user-secrets list
+
 
 
 --teste unitarios - XUnit
@@ -139,3 +142,26 @@ Ambiente
 
     link importante de como usar o azure free
     https://learn.microsoft.com/pt-br/azure/app-service/app-service-web-tutorial-dotnet-sqldatabase
+
+    --adicionando package do azure para aceitar o user-secrets
+    dotnet add package Azure.Identity
+
+    dotnet add package Microsoft.Extensions.Configuration.AzureKeyVault
+
+    dotnet add package Azure.Security.KeyVault.Secrets
+
+    --observações
+    -não pode usar _, deixe sem nada
+    -não pode usar :, use o -- a aplicação .net ja reconhece que é :
+
+    --extensões do azure para deploy
+    Azure Account
+    Azure App Service
+    Azure Resources
+
+    --publicando no azure
+    --montando o publish para o deploy
+    dotnet publish -c Release -o ./publish
+        - depois que criar o publish vai com o direito na pasta e clica em Deploy to Web App...
+        - depois so escolher a aplicação do azure que criou e pronto.
+        - a aplicação no azure é o Manager.API.dll, para teste pelo Kudu do Azure

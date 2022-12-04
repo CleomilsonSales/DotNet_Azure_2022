@@ -18,6 +18,17 @@ namespace Manager.API
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+                //configuração do Azure
+                .ConfigureAppConfiguration((context, config) => {
+                    if (context.HostingEnvironment.IsProduction()){
+                        var buildConfig = config.Build();
+
+                        config.AddAzureKeyVault(
+                            buildConfig["AzureKeyVault:Vault"],
+                            buildConfig["AzureKeyVault:ClientId"],
+                            buildConfig["AzureKeyVault:ClientSecret"]); //configurar essas chaves no appsettings.json
+                    }
+                })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
