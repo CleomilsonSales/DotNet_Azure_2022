@@ -4,7 +4,7 @@ using Manager.Services.Interfaces;
 using AutoMapper;
 using Moq;
 using Manager.Infra.Interfaces;
-using EscNet.Cryptography.Interfaces;
+//using EscNet.Cryptography.Interfaces;
 using Manager.Tests.Configuration;
 using System.Threading.Tasks;
 using Xunit;
@@ -17,6 +17,7 @@ using Manager.Tests.Fixtures;
 using Manager.Core.Exceptions;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using EscNet.Hashers.Interfaces.Algorithms;
 
 namespace Manager.Tests.Projects.Services{
 
@@ -27,18 +28,21 @@ namespace Manager.Tests.Projects.Services{
         //mocks - fingindo algo, imitar algo
         private readonly IMapper _mapper;
         private readonly Mock<IUserRepository> _userRepositoryMock;
-        private readonly Mock<IRijndaelCryptography> _rijndaelCryptographyMock;
+        //private readonly Mock<IRijndaelCryptography> _rijndaelCryptographyMock; //criptografando
+        private readonly Mock<IArgon2IdHasher> _hashMock;  //fazendo hash
 
 
         public UserServiceTests(){
             _mapper = AutoMapperConfiguration.GetConfiguration();
             _userRepositoryMock = new Mock<IUserRepository>();
-            _rijndaelCryptographyMock = new Mock<IRijndaelCryptography>();
+            //_rijndaelCryptographyMock = new Mock<IRijndaelCryptography>();
+            _hashMock = new Mock<IArgon2IdHasher>();
 
-            _sut = new UserService(mapper: _mapper,
+            _sut = new UserService(
+                mapper: _mapper,
                 userRepository: _userRepositoryMock.Object,
-                rijndaelCryptography: _rijndaelCryptographyMock.Object
-            );
+                //rijndaelCryptography: _rijndaelCryptographyMock.Object
+                hasher: _hashMock.Object);
         }
 
         #region Create
@@ -54,14 +58,20 @@ namespace Manager.Tests.Projects.Services{
             var userToCreate = UserFixture.CreateValidUserDTO(); //antes da fixture - new UserDTO{Name = "Cleomilson", Email = "cleomilson@hotmai.com.br", Password = "12345678910"};
             var userCreated = _mapper.Map<User>(userToCreate);
             //lorem é do package bogus, que faz dados falsos, para vc criar dados para utilizar
-            var encryptedPassword = new Lorem().Sentence();
-            userCreated.SetPassword(encryptedPassword);
+            //var encryptedPassword = new Lorem().Sentence();
+            var hashedPassword = new Lorem().Sentence();
+
+            //userCreated.SetPassword(encryptedPassword);
+            userCreated.SetPassword(hashedPassword);
             
             _userRepositoryMock.Setup(x => x.GetByEmail(It.IsAny<string>()))
                 .ReturnsAsync(() => null);
 
-            _rijndaelCryptographyMock.Setup(x => x.Encrypt(It.IsAny<string>()))
-                .Returns(encryptedPassword);
+            /*_rijndaelCryptographyMock.Setup(x => x.Encrypt(It.IsAny<string>()))
+                .Returns(encryptedPassword);*/
+
+            _hashMock.Setup(x => x.Hash(It.IsAny<string>()))
+                .Returns(hashedPassword);
 
             _userRepositoryMock.Setup(x => x.Create(It.IsAny<User>()))
                 .ReturnsAsync(() => userCreated);
@@ -91,9 +101,9 @@ namespace Manager.Tests.Projects.Services{
                 return await _sut.Create(userToCreate);
             };
 
-            act.Should();
-                /*.Throw<DomainException>()
-                .WithMessage("Já existe um usuário com o email.");*/ //não aceitou
+            act.Should()
+                .Throw<DomainException>() //CUIDADO, esse Throw só funcionar nas versões do packages fluentassertions e Microsoft.NET.Test.Sdk que estão no csproj
+                .WithMessage("Já existe um usuário com o email."); 
         }
 
         [Fact(DisplayName = "Create When User is Invalid")]
@@ -108,8 +118,8 @@ namespace Manager.Tests.Projects.Services{
                 return await _sut.Create(userToCreate);
             };
 
-            act.Should();
-                //.Throw<DomainException>(); --não aceitou
+            act.Should()
+                .Throw<DomainException>(); 
         }
 
         #endregion
@@ -123,13 +133,17 @@ namespace Manager.Tests.Projects.Services{
             var userToUpdate = UserFixture.CreateValidUserDTO(); 
             var userUpdated = _mapper.Map<User>(userToUpdate);
             
-            var encryptedPassword = new Lorem().Sentence();
+            //var encryptedPassword = new Lorem().Sentence();
+            var hashedPassword = new Lorem().Sentence();
             
             _userRepositoryMock.Setup(x => x.Get(It.IsAny<long>()))
                 .ReturnsAsync(() => oldUser);
 
-            _rijndaelCryptographyMock.Setup(x => x.Encrypt(It.IsAny<string>()))
-                .Returns(encryptedPassword);
+            /*_rijndaelCryptographyMock.Setup(x => x.Encrypt(It.IsAny<string>()))
+                .Returns(encryptedPassword);*/
+            
+            _hashMock.Setup(x => x.Hash(It.IsAny<string>()))
+                .Returns(hashedPassword);
 
             _userRepositoryMock.Setup(x => x.Update(It.IsAny<User>()))
                 .ReturnsAsync(() => userUpdated);
@@ -154,12 +168,13 @@ namespace Manager.Tests.Projects.Services{
                 return await _sut.Update(userToUpdate);
             };
 
-            act.Should();
-                /*.Throw<DomainException>()
-                .WithMessage("Não existe nenhum usuário com o id informado!");*/ //não aceitou
+            act.Should()
+                .Throw<DomainException>()
+                .WithMessage("Não existe nenhum usuário com o id informado!"); 
 
         }
 
+        /* Refatorando trantiva de erros */
         [Fact(DisplayName = "Update When User is Invalid")]
         [Trait("Category","Services")]
         public void Update_WhenUserIsInvald_ThrowsNewDomainException(){
@@ -174,8 +189,8 @@ namespace Manager.Tests.Projects.Services{
                 return await _sut.Update(userToUpdate);
             };
 
-            act.Should();
-                //.Throw<DomainException>(); //não aceitou
+            act.Should()
+                .Throw<DomainException>(); 
         }
 
         #endregion

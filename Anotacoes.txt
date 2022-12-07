@@ -165,3 +165,9 @@ Ambiente
         - depois que criar o publish vai com o direito na pasta e clica em Deploy to Web App...
         - depois so escolher a aplicação do azure que criou e pronto.
         - a aplicação no azure é o Manager.API.dll, para teste pelo Kudu do Azure
+
+
+upgrade para dotnet 6
+    -primeiro, muda as versões dos packager e TargetFramework do MANAGER.API.CSPROJ 
+        --link para ajudar a ver versões: https://www.nuget.org/packages
+    -segundo, dotnet restore - para o nuget atualizar os packages

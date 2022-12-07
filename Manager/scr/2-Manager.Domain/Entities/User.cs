@@ -61,10 +61,11 @@ namespace Manager.Domain.Entities{
 
 using System.Collections.Generic;
 using Manager.Domain.Validators;
+using Manager.Domain.Interfaces;
 
 namespace Manager.Domain.Entities
 {
-    public class User : Base {
+    public class User : Base, IAggregateRoot {
 
         //Propriedades
         public string Name { get; private set; }

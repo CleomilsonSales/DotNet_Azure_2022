@@ -25,7 +25,11 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text; //para o encoding
 using Manager.API.Token;
-using EscNet.DependencyInjection.IoC.Cryptography;
+//using EscNet.DependencyInjection.IoC.Cryptography; versão 1.0.1 do escnet
+using EscNet.IoC.Cryptography;
+using Isopoh.Cryptography.Argon2;
+using EscNet.IoC.Hashers;
+
 
 namespace Manager.API
 {
@@ -43,7 +47,7 @@ namespace Manager.API
         {
 
             services.AddControllers();
-
+            services.AddSingleton(cfg => Configuration);
             
             #region Jwt
 
@@ -129,6 +133,23 @@ namespace Manager.API
             services.AddRijndaelCryptography(Configuration["Cryptography:Key"]);    
 
             #endregion    
+
+            #region Hash
+
+            var config = new Argon2Config{
+                Type = Argon2Type.DataIndependentAddressing,
+                Version = Argon2Version.Nineteen,
+                TimeCost = int.Parse(Configuration["Hash:TimeCost"]),
+                MemoryCost = int.Parse(Configuration["Hash:MemoryCost"]),
+                Lanes = int.Parse(Configuration["Hash:Lanes"]),
+                Threads = Environment.ProcessorCount, //processador da maquina, cuidado
+                Salt = Encoding.UTF8.GetBytes(Configuration["Hash:Salt"]),
+                HashLength = int.Parse(Configuration["Hash:HashLength"])
+            };
+
+            services.AddArgon2IdHasher(config);
+
+            #endregion
 
 
         }

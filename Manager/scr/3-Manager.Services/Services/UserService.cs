@@ -6,20 +6,30 @@ using Manager.Core.Exceptions;
 using Manager.Services.DTO;
 using System.Threading.Tasks;
 using System.Collections.Generic;
-using EscNet.Cryptography.Interfaces;
-
+//using EscNet.Cryptography.Interfaces;
+using EscNet.Hashers.Interfaces.Algorithms;
+using Isopoh.Cryptography.Argon2;
+using EscNet.IoC.Hashers;
+using System;
+using System.Linq.Expressions;
 
 namespace Manager.Services.Services{
     public class UserService : IUserService{
 
         private readonly IMapper _mapper;
         private readonly IUserRepository _userRepository;
-        private readonly IRijndaelCryptography _rijndaelCryptography;
+        //private readonly IRijndaelCryptography _rijndaelCryptography; //mudando para Hash
+        private readonly IArgon2IdHasher _hasher;
 
-        public UserService(IMapper mapper, IUserRepository userRepository, IRijndaelCryptography rijndaelCryptography){
+        public UserService(
+            IMapper mapper, 
+            IUserRepository userRepository, 
+            //IRijndaelCryptography rijndaelCryptography,
+            IArgon2IdHasher hasher){
             _mapper = mapper;
             _userRepository = userRepository;
-            _rijndaelCryptography = rijndaelCryptography;
+            //_rijndaelCryptography = rijndaelCryptography;
+            _hasher = hasher;
         }
 
         public async Task<UserDTO> Create(UserDTO userDTO){
@@ -30,7 +40,8 @@ namespace Manager.Services.Services{
 
             var user = _mapper.Map<User>(userDTO);
             user.Validate();
-            user.SetPassword(_rijndaelCryptography.Encrypt(user.Password)); //criptografando a senha
+            //user.SetPassword(_rijndaelCryptography.Encrypt(user.Password)); //criptografando a senha
+            user.SetPassword(_hasher.Hash(user.Password)); //fazendo Hash na senha
 
             var userCreated = await _userRepository.Create(user);
 
@@ -45,7 +56,8 @@ namespace Manager.Services.Services{
 
             var user = _mapper.Map<User>(userDTO);
             user.Validate();
-            user.SetPassword(_rijndaelCryptography.Encrypt(user.Password)); //criptografando a senha
+            //user.SetPassword(_rijndaelCryptography.Encrypt(user.Password)); //criptografando a senha
+            user.SetPassword(_hasher.Hash(user.Password));
 
             var userUpdated = await _userRepository.Update(user);
 

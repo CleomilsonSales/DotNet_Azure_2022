@@ -41,8 +41,7 @@ namespace Manager.Domain.Entities{
             => _errors.Clear();
 
         protected bool Validate<T, J>(T validator, J obj)
-            where T : AbstractValidator<J>
-        {
+            where T : AbstractValidator<J>{
             var validation = validator.Validate(obj);
 
             if (validation.Errors.Count > 0)
